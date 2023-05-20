@@ -9,11 +9,11 @@ const Chats = (props: Props) => {
     <div className="w-full">
       {chats.map((m, i) => {
         return i % 2 != 0 ? (
-          <div className="flex w-full justify-start">
+          <div key={i} className="flex w-full justify-start">
             <div className="bg-[#146C94] p-2">{m}</div>
           </div>
         ) : (
-          <div className="flex w-full justify-end">
+          <div key={i} className="flex w-full justify-end">
             <div className="bg-[#19A7CE] p-2">{m}</div>
           </div>
         );
