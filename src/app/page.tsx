@@ -2,8 +2,9 @@
 import CharacterCount from "@/components/charcount";
 import Chats from "@/components/chats";
 import TextInput from "@/components/textInput";
-import { setMsgList, useMsgList } from "@/store/msgStore";
+import { msgList$, setMsgList, useMsgList } from "@/store/msgStore";
 import { Subscribe } from "@react-rxjs/core";
+import axios from "axios";
 import Image from "next/image";
 import React from "react";
 import { useEffect, useState } from "react";
@@ -11,11 +12,20 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [msg, setMsg] = useState("");
 
-  const msgList = useMsgList()
+  const msgList = useMsgList();
 
   const sendMsg = () => {
     console.log("msg");
-    setMsgList([...msgList,msg])
+    setMsgList([...msgList, msg]);
+    axios
+      .post("http://127.0.0.1:5000/chat", {
+        q: msg,
+      })
+      .then((response) => {
+        console.log(response);
+        console.log(msgList$.getValue());
+        setMsgList([...msgList$.getValue(), response.data.a]);
+      });
     setMsg("");
   };
 
@@ -26,6 +36,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-10">
+      <Subscribe>
         <div className="flex flex-col grow w-2/3">
           <div className="flex grow w-full mb-2">
             <Chats />
@@ -47,8 +58,7 @@ export default function Home() {
             </button>
           </div>
         </div>
+      </Subscribe>
     </main>
   );
 }
-
-
