@@ -2,6 +2,7 @@
 import { setMsgList, useMsgList } from "@/store/msgStore";
 import { Subscribe } from "@react-rxjs/core";
 import React, { useEffect } from "react";
+import { Avatar } from "@nextui-org/react";
 
 type Props = {};
 
@@ -27,12 +28,16 @@ const Chats = (props: Props) => {
     <div className="w-full">
       {msgList.map((m, i) => {
         return i % 2 != 0 ? (
-          <div key={i} className="flex w-full justify-start m-1">
-            <div className="bg-[#146C94] p-2 w-4/5">{m}</div>
+          <div key={i} className="flex w-full justify-start m-1 gap-1">
+            <Avatar text="CB" size="md" />{" "}
+            <div className="bg-[#146C94] text-white rounded-md p-2 w-4/5">
+              {m}
+            </div>
           </div>
         ) : (
-          <div key={i} className="flex w-full justify-end m-1">
-            <div className="bg-[#19A7CE] p-2 w-4/5">{m}</div>
+          <div key={i} className="flex w-full justify-end m-1 gap-1">
+            <div className="bg-[#19A7CE] p-2 rounded-md w-4/5">{m}</div>{" "}
+            <Avatar text="ME" size="md" />
           </div>
         );
       })}
