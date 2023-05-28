@@ -2,6 +2,10 @@
 import { Subscribe } from "@react-rxjs/core";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { NextUIProvider } from "@nextui-org/react";
+import React from 'react';
+import Head from 'next/head'
+import { CssBaseline } from '@nextui-org/react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,10 +19,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
+       <Head>{CssBaseline.flush()}</Head>
       <body className={inter.className}>
-       {children}
+        <NextUIProvider>{children}</NextUIProvider>
       </body>
     </html>
   );
