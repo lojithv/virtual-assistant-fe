@@ -60,7 +60,7 @@ export default function Home() {
   >
       <main className="flex min-h-screen flex-col items-center justify-between p-10 bg-white">
         <div className="flex w-full items-end justify-end">
-          <div className="bg-[#aaaaaa] p-2 rounded-md" onClick={signout}>
+          <div className="bg-[#F2B6A0] p-2 rounded-md" onClick={signout}>
             Logout
           </div>{" "}
         </div>
@@ -74,12 +74,12 @@ export default function Home() {
                 type="text"
                 value={msg}
                 onChange={handleMsgChange}
-                className="flex grow w-full bg-[#acd3f8] h-12 rounded-md text-black p-2"
+                className="flex grow w-full bg-[#bacaf5] h-12 rounded-md text-black p-2"
               />
               <button
                 type="button"
                 id="bt"
-                className="w-20 bg-[#258ab6] hover:bg-[#35a6d6] rounded-md"
+                className="w-20 bg-[#8294C4] hover:bg-[#8294C4] rounded-md text-white"
                 onClick={sendMsg}
               >
                 Send

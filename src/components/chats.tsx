@@ -30,13 +30,13 @@ const Chats = (props: Props) => {
         return i % 2 != 0 ? (
           <div key={i} className="flex w-full justify-start m-1 gap-1">
             <Avatar text="CB" size="md" />{" "}
-            <div className="bg-[#146C94] text-white rounded-md p-2 w-4/5">
+            <div className="bg-[#ACB1D6] rounded-md p-2 w-4/5">
               {m}
             </div>
           </div>
         ) : (
           <div key={i} className="flex w-full justify-end m-1 gap-1">
-            <div className="bg-[#19A7CE] p-2 rounded-md w-4/5">{m}</div>{" "}
+            <div className="bg-[#AFD3E2] p-2 rounded-md w-4/5">{m}</div>{" "}
             <Avatar text="ME" size="md" />
           </div>
         );
