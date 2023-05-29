@@ -66,12 +66,12 @@ export default function Home() {
   >
       <main className="flex min-h-screen flex-col items-center justify-between p-10 bg-white">
         <div className="flex w-full items-end justify-end">
-          <div className="bg-[#F2B6A0] p-2 rounded-md cursor-pointer" onClick={signout}>
+          <div className="bg-[#F2B6A0] p-2 rounded-md cursor-pointer mb-2" onClick={signout}>
             Logout
           </div>{" "}
         </div>
         <Subscribe>
-          <div className="flex flex-col grow w-2/3">
+          <div className="flex flex-col grow md:w-2/3">
             <div className="flex grow w-full mb-2">
               <Chats />
             </div>
