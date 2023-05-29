@@ -14,7 +14,7 @@ const page = (props: Props) => {
 
   return (
     <div className="flex w-full min-h-screen justify-center items-center bg-white">
-      <div onClick={signInWithGoogle} className="bg-[#2bb1ff] p-2 rounded-md">
+      <div onClick={signInWithGoogle} className="bg-[#2bb1ff] p-2 rounded-md cursor-pointer text-white">
         sign in
       </div>
     </div>
